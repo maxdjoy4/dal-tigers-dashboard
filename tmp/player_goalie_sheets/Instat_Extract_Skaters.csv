@@ -1,0 +1,143 @@
+SKATER INSTAT EXTRACTION PLAN,,,,,,,,,
+,,,,,,,,,
+Group,Source Column,Metric Key,Action,Extract?,Store Raw?,Show on Dashboard?,Use in Main Score?,Module,Reason
+Main / Usage / Outcomes,Shirt number,shirt_number,STORE_CONTEXT,1,1,1,0,Roster Context,"Useful ID/roster field, not part of scoring."
+Main / Usage / Outcomes,Player,player,REQUIRED_RAW,1,1,1,0,Usage / Context,Required identifier or denominator for per-60/rate scoring.
+Main / Usage / Outcomes,Position,position,REQUIRED_RAW,1,1,1,0,Usage / Context,Required identifier or denominator for per-60/rate scoring.
+Main / Usage / Outcomes,Time on ice,time_on_ice,REQUIRED_RAW,1,1,1,0,Usage / Context,Required identifier or denominator for per-60/rate scoring.
+Main / Usage / Outcomes,Games played,games_played,REQUIRED_RAW,1,1,1,0,Usage / Context,Required identifier or denominator for per-60/rate scoring.
+Main / Usage / Outcomes,All shifts,all_shifts,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Main / Usage / Outcomes,Goals,goals,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Main / Usage / Outcomes,First assist,first_assist,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Main / Usage / Outcomes,Second assist,second_assist,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Main / Usage / Outcomes,Assists,assists,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Main / Usage / Outcomes,Points,points,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Main / Usage / Outcomes,+/-,plus_minus,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Scoring Chances / Slot,Scoring chances,scoring_chances,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Main / Usage / Outcomes,Penalties drawn,penalties_drawn,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Main / Usage / Outcomes,Penalty time,penalty_time,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Main / Usage / Outcomes,Faceoffs,faceoffs,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Main / Usage / Outcomes,Faceoffs won,faceoffs_won,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Main / Usage / Outcomes,"Faceoffs won, %",faceoffs_won_pct,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Main / Usage / Outcomes,Hits,hits,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Shots,Shots,shots,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Shots,Shots on goal,shots_on_goal,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Shots,Blocked shots,blocked_shots,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Special Teams,Power play shots,power_play_shots,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Special Teams,Short-handed shots,shortminushanded_shots,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Passing,Passes to the slot,passes_to_the_slot,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Faceoffs,Faceoffs in DZ,faceoffs_in_dz,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Faceoffs,Faceoffs won in DZ,faceoffs_won_in_dz,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Faceoffs,"Faceoffs won in DZ, %",faceoffs_won_in_dz_pct,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Faceoffs,Faceoffs in NZ,faceoffs_in_nz,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Faceoffs,Faceoffs won in NZ,faceoffs_won_in_nz,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Faceoffs,"Faceoffs won in NZ, %",faceoffs_won_in_nz_pct,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Faceoffs,Faceoffs in OZ,faceoffs_in_oz,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Faceoffs,Faceoffs won in OZ,faceoffs_won_in_oz,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Faceoffs,"Faceoffs won in OZ, %",faceoffs_won_in_oz_pct,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Puck Battles / Skills,Puck battles,puck_battles,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Puck Battles / Skills,Puck battles won,puck_battles_won,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Puck Battles / Skills,"Puck battles won, %",puck_battles_won_pct,STORE_QA_CALCULATE_ADJUSTED,1,1,1,0,Calculated/QA,"Store because it is easy, but website should calculate adjusted/reliability-protected version from raw counts when possible."
+Puck Battles / Skills,Puck battles in DZ,puck_battles_in_dz,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Puck Battles / Skills,Puck battles in NZ,puck_battles_in_nz,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Puck Battles / Skills,Puck battles in OZ,puck_battles_in_oz,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Puck Battles / Skills,Shots blocking,shots_blocking,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Puck Battles / Skills,Dekes,dekes,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Puck Battles / Skills,Dekes successful,dekes_successful,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Puck Battles / Skills,Dekes unsuccessful,dekes_unsuccessful,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Puck Battles / Skills,"Dekes successful, %",dekes_successful_pct,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Shots,Missed shots,missed_shots,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Shots,% shots on goal,pct_shots_on_goal,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Shots,Slapshot,slapshot,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Shots,Wrist shot,wrist_shot,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Shots,Shootouts,shootouts,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Shots,Shootouts scored,shootouts_scored,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Shots,Shootouts missed,shootouts_missed,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Shots,1-on-1 shots,1minusonminus1_shots,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Shots,1-on-1 goals,1minusonminus1_goals,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Shots,"Shots conversion 1 on 1, %",shots_conversion_1_on_1_pct,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Shots,Positional attack shots,positional_attack_shots,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Shots,Shots 5 v 5,shots_5_v_5,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Shots,Counter-attack shots,counterminusattack_shots,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Recoveries / Losses,Takeaways,takeaways,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Recoveries / Losses,Puck retrievals after shots,puck_retrievals_after_shots,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Recoveries / Losses,Opponent’s dump-in retrievals,opponents_dumpminusin_retrievals,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Recoveries / Losses,Takeaways in DZ,takeaways_in_dz,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Recoveries / Losses,Loose puck recovery,loose_puck_recovery,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Recoveries / Losses,Takeaways in NZ,takeaways_in_nz,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Recoveries / Losses,Takeaways in OZ,takeaways_in_oz,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Recoveries / Losses,EV DZ retrievals,ev_dz_retrievals,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Recoveries / Losses,Puck losses,puck_losses,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Recoveries / Losses,Puck losses in DZ,puck_losses_in_dz,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Recoveries / Losses,EV OZ retrievals,ev_oz_retrievals,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Recoveries / Losses,Puck losses in NZ,puck_losses_in_nz,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Special Teams,Power play retrievals,power_play_retrievals,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Recoveries / Losses,Penalty kill retrievals,penalty_kill_retrievals,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Recoveries / Losses,Puck losses in OZ,puck_losses_in_oz,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Entries / Breakouts,Entries,entries,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Entries / Breakouts,Entries via pass,entries_via_pass,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Entries / Breakouts,Entries via dump in,entries_via_dump_in,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Entries / Breakouts,Entries via stickhandling,entries_via_stickhandling,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Entries / Breakouts,Breakouts,breakouts,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Entries / Breakouts,Breakouts via pass,breakouts_via_pass,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Entries / Breakouts,Breakouts via dump out,breakouts_via_dump_out,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Entries / Breakouts,Breakouts via stickhandling,breakouts_via_stickhandling,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Scoring Chances / Slot,Scoring chances - total,scoring_chances_minus_total,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Scoring Chances / Slot,Scoring chances - scored,scoring_chances_minus_scored,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Scoring Chances / Slot,Scoring chances missed,scoring_chances_missed,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Scoring Chances / Slot,Scoring chances saved,scoring_chances_saved,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Other,"Scoring Chances, %",scoring_chances_pct,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Scoring Chances / Slot,Inner slot shots - total,inner_slot_shots_minus_total,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Scoring Chances / Slot,Inner slot shots - scored,inner_slot_shots_minus_scored,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Scoring Chances / Slot,Inner slot shots - missed,inner_slot_shots_minus_missed,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Scoring Chances / Slot,Inner slot shots - saved,inner_slot_shots_minus_saved,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Scoring Chances / Slot,"Inner slot shots, %",inner_slot_shots_pct,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Scoring Chances / Slot,Outer slot shots - total,outer_slot_shots_minus_total,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Scoring Chances / Slot,Outer slot shots - scored,outer_slot_shots_minus_scored,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Scoring Chances / Slot,Outer slot shots - missed,outer_slot_shots_minus_missed,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Scoring Chances / Slot,Outer slot shots - saved,outer_slot_shots_minus_saved,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Scoring Chances / Slot,"Outer slot shots, %",outer_slot_shots_pct,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Scoring Chances / Slot,Blocked shots from the slot,blocked_shots_from_the_slot,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Scoring Chances / Slot,Blocked shots outside of the slot,blocked_shots_outside_of_the_slot,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Passing,Passes,passes,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Passing,Accurate passes,accurate_passes,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Passing,"Accurate passes, %",accurate_passes_pct,STORE_QA_CALCULATE_ADJUSTED,1,1,1,0,Calculated/QA,"Store because it is easy, but website should calculate adjusted/reliability-protected version from raw counts when possible."
+Passing,Pre-shots passes,preminusshots_passes,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Passing,Pass receptions,pass_receptions,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+xG / On-Ice Impact,xG per shot,xg_per_shot,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+xG / On-Ice Impact,xG (Expected goals),xg,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+xG / On-Ice Impact,xG per goal,xg_per_goal,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+xG / On-Ice Impact,Net xG (xG player on - opp. team's xG),net_xg_xg_player_on_minus_opp_teams_xg,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+xG / On-Ice Impact,Team xG when on ice,team_xg_when_on_ice,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+xG / On-Ice Impact,Opponent's xG when on ice,opponents_xg_when_on_ice,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+xG / On-Ice Impact,xG conversion,xg_conversion,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Possession / Shot Share,CORSI,corsi,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Possession / Shot Share,CORSI-,corsiminus,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Possession / Shot Share,CORSI+,corsiplus,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Possession / Shot Share,"CORSI for, %",corsi_for_pct,STORE_QA_CALCULATE_ADJUSTED,1,1,1,0,Calculated/QA,"Store because it is easy, but website should calculate adjusted/reliability-protected version from raw counts when possible."
+Possession / Shot Share,Fenwick for,fenwick_for,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Possession / Shot Share,Fenwick against,fenwick_against,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Possession / Shot Share,"Fenwick for, %",fenwick_for_pct,STORE_QA_CALCULATE_ADJUSTED,1,1,1,0,Calculated/QA,"Store because it is easy, but website should calculate adjusted/reliability-protected version from raw counts when possible."
+Playtime Phases / Territory,Playing in attack,playing_in_attack,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Playtime Phases / Territory,Playing in defense,playing_in_defense,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Playtime Phases / Territory,OZ possession,oz_possession,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Playtime Phases / Territory,NZ possession,nz_possession,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Playtime Phases / Territory,DZ possession,dz_possession,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Special Teams,Power play,power_play,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Other,Successful power play,successful_power_play,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Special Teams,Power play time,power_play_time,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Special Teams,Short-handed,shortminushanded,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Special Teams,Penalty killing,penalty_killing,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Special Teams,Short-handed time,shortminushanded_time,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Main / Usage / Outcomes,Puck touches,puck_touches,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Main / Usage / Outcomes,Puck control time,puck_control_time,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Main / Usage / Outcomes,Plus,plus,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Main / Usage / Outcomes,Minus,minus,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Main / Usage / Outcomes,Penalties,penalties,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Main / Usage / Outcomes,Faceoffs lost,faceoffs_lost,OPTIONAL_MODULE,1,1,1,0,Optional Module,"Extract if easy; use in a specific module/profile card, not the main V1 impact score."
+Main / Usage / Outcomes,Hits against,hits_against,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Main / Usage / Outcomes,Error leading to goal,error_leading_to_goal,CORE_OR_SUPPORTING_KPI,1,1,1,1,Weighted KPI / Calculated KPI,Use directly or as source for per-60/percentile/adjusted score.
+Main / Usage / Outcomes,Dump ins,dump_ins,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Main / Usage / Outcomes,Dump outs,dump_outs,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Main / Usage / Outcomes,Team goals when on ice,team_goals_when_on_ice,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.
+Main / Usage / Outcomes,Opponent's goals when on ice,opponents_goals_when_on_ice,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Context,Good for player pages and role interpretation; do not let it drive the main impact score.

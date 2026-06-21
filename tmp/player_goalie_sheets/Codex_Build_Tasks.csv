@@ -1,0 +1,15 @@
+CODEX BUILD TASKS,,
+,,
+Step,Task,Definition of Done
+1,Create database migration,"Add player/goalie season stat tables, metric weight tables, calculated metrics, scores, and mapping tables."
+2,Build upload parser,"Handle skater export, goalie export, and team weight model. Preserve raw jsonb and normalize numeric columns."
+3,Load metric weights,Import this workbook’s Skater_Metric_Weights and Goalie_Metric_Weights into Supabase.
+4,Build calculation engine,"Calculate per-60, adjusted percentages, inverted metrics, percentiles by position group, category scores, and overall scores."
+5,Implement reliability flags,"Use games played, TOI, shot/chance attempts, and metric-specific denominators."
+6,Implement dynamic reweighting,"If a metric is null or inactive, redistribute weight within the active category."
+7,Build Squad Overview,"Roster table, top skaters, top goalies, category leaders, risk flags, and sample-size flags."
+8,Build Player Breakdown,"Cards for overall/category scores, strongest KPIs, development areas, comparison to team/position average, raw stat table."
+9,Build Goalie Breakdown,"Goalie overall score, save %, GSAE, chance save profile, workload, puck-playing, reliability."
+10,Build Comparison pages,"Compare players or goalies across raw, calculated, and weighted metrics."
+11,Add explanations,"Every score should have a tooltip showing source columns, direction, normalization, and weight."
+12,Acceptance test,"Upload the current Dal skater + goalie exports and confirm scores produce without errors, nulls are handled, and active weights sum correctly."

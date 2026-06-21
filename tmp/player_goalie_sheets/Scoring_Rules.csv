@@ -1,0 +1,17 @@
+SCORING RULES FOR CODEX,,,
+,,,
+Rule,Purpose,Implementation,Notes
+TOI conversion,Convert Time on ice strings like 369:01 into minutes.,minutes = hours_or_minutes_component + seconds/60 depending export; validate max value by season context.,Required before per-60 calculations.
+Per-60 volume,Use for all count stats affected by ice time.,metric_per60 = raw_metric / toi_minutes * 60,Do not calculate if TOI is null or 0.
+Positive metric scoring,Higher values are better.,"percentile within position group, 0-100","Use F vs F, D vs D, G vs G."
+Negative metric scoring,Lower values are better.,inverted percentile: 100 - percentile,"Examples: DZ losses, NZ losses, penalty time, goals against."
+Adjusted percentage,Use raw attempts + successes; shrink tiny samples toward baseline.,(successes + baseline_rate * sample_weight) / (attempts + sample_weight),"Use for puck battles, pass accuracy, faceoffs, goalie saves."
+Puck battle adjusted %,Prevent 4/4 beating 15/20 just because of raw %.,baseline 0.50; sample_weight 10 for skaters,Score adjusted % and won battles /60 together.
+Pass accuracy adjusted %,Reward accuracy but protect against low pass samples.,baseline team/position average; sample_weight 30 passes,Use raw accurate passes and passes.
+Corsi/Fenwick adjusted %,Use for/against event counts when available.,"for_events / (for_events + against_events), optionally shrunk to 50%",Fallback to provided % if raw parts missing.
+Goalie save % adjusted,Protect small goalie samples.,(saves + league_avg_sv_pct * sample_weight) / (shots + sample_weight),Use 0.900 baseline if no league average; sample_weight 100 shots.
+Goalie scoring chance save % adjusted,Protect small high-danger samples.,(SC saves + baseline * sample_weight) / (SC total + sample_weight),Use baseline from team/league if available; sample_weight 25 chances.
+Outcome stat handling,Goals/assists/points/plus-minus are context or low weight.,Use low final weight or display-only flags.,Do not let outcomes dominate process model.
+Context-dependent defensive volume,High DZ retrievals/battles can mean good work or too much DZ time.,"Use composites with opp xG, puck losses, and breakouts.",Do not score raw DZ volume as purely positive.
+Missing data,"Dashes/blanks should become null, not zero.","If denominator missing, set derived metric null.",Redistribute weights across active metrics in same category.
+Dynamic reweighting,"If a metric/category is unavailable, redistribute within active metrics.",category_score = weighted average of available metric scores only,Do not punish a player for untracked PP/PK columns.

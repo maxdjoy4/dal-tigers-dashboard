@@ -1,0 +1,25 @@
+CATEGORY WEIGHTS,,,
+,,,
+Model Type,Category,Category Weight %,Description
+Forward,Offensive Creation & Shot Quality,27,"Primary forward value: creating quality shots, chances, xG, and dangerous passes."
+Forward,Possession & On-Ice Impact,18,"Connects the individual to the AUS team-success model through Corsi, Fenwick, and xG differential."
+Forward,Transition Offense,12,"Rewards entries, attack creation off the rush, and possession gains into the offensive zone."
+Forward,Puck Management,14,"Controls turnovers, pass quality, and risk in NZ/DZ/OZ situations."
+Forward,Defensive Impact,10,"Captures suppression, takeaways, blocking, and defensive involvement without over-rewarding players stuck defending."
+Forward,Battle / Compete & Recoveries,10,"Rewards winning pucks and extending possession, while using attempts + wins to avoid small-sample percentage traps."
+Forward,Special Teams,5,Used when PP/PK data is populated; dynamically redistributed when missing.
+Forward,Discipline / Risk,4,"Penalties, errors, and high-risk losses should reduce score."
+Defense,Defensive Impact & Suppression,24,"Most important defense value: suppress xG, block dangerous shots, retrieve pucks, and reduce quality against."
+Defense,Puck Management & Exits,22,"Core defense skill: manage DZ/NZ pucks, make first passes, and exit cleanly."
+Defense,Possession & On-Ice Impact,17,"Corsi, Fenwick, net xG, and territory indicate whether play moves the right way with player on ice."
+Defense,Transition Support,12,"Rewards breakout support, passing entries, and controlled transition assistance."
+Defense,Battle / Recoveries,10,"Defenders must win/recover pucks under pressure, especially in DZ."
+Defense,Offensive Support,8,Rewards secondary offensive contribution without scoring defense like forwards.
+Defense,Special Teams,4,PK/PP details if available; dynamic redistribution when missing.
+Defense,Discipline / Risk,3,Defensive errors and penalties can be high-cost.
+Goalie,Shot-Stopping,30,Core goalie output: stop pucks relative to shots faced and goals allowed.
+Goalie,xG-Adjusted Performance,25,Best chance-quality adjustment: did goalie outperform or underperform expected goals against?
+Goalie,High-Danger / Scoring-Chance Performance,20,Important because team success depends on surviving dangerous chances.
+Goalie,Workload / Usage Context,10,Prevents the model from overvaluing tiny samples or easy workloads.
+Goalie,Puck-Playing,10,Supports exits and reduces pressure through passing decisions.
+Goalie,Discipline / Special Situations,5,Low-weight context for penalties and shootouts.

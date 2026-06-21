@@ -1,0 +1,26 @@
+GOALIE INSTAT EXTRACTION PLAN,,,,,,,,,
+,,,,,,,,,
+Group,Source Column,Metric Key,Action,Extract?,Store Raw?,Show on Dashboard?,Use in Main Score?,Module,Reason
+Goalie,Shirt number,shirt_number,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Goalie Model,Good context but not a core goalie score driver.
+Goalie,Player,player,REQUIRED_RAW,1,1,1,0,Goalie Model,Required identifier or denominator.
+Goalie,Games played,games_played,REQUIRED_RAW,1,1,1,0,Goalie Model,Required identifier or denominator.
+Goalie,Time on ice,time_on_ice,REQUIRED_RAW,1,1,1,0,Goalie Model,Required identifier or denominator.
+Goalie,Goals against,goals_against,CORE_OR_SUPPORTING_KPI,1,1,1,1,Goalie Model,Use directly or as source for goalie-specific score.
+Goalie,Shots on goal,shots_on_goal,CORE_OR_SUPPORTING_KPI,1,1,1,1,Goalie Model,Use directly or as source for goalie-specific score.
+Goalie,Saves,saves,CORE_OR_SUPPORTING_KPI,1,1,1,1,Goalie Model,Use directly or as source for goalie-specific score.
+Goalie,"Saves, %",saves_pct,STORE_QA_CALCULATE_ADJUSTED,1,1,1,0,Goalie Model,"Store raw percentage, but website should calculate reliability-protected version from attempts/successes."
+Goalie,Penalty time,penalty_time,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Goalie Model,Good context but not a core goalie score driver.
+Goalie,Penalties drawn,penalties_drawn,STORE_CONTEXT_LOW_OR_NO_WEIGHT,1,1,1,0,Goalie Model,Good context but not a core goalie score driver.
+Goalie,Passes,passes,CORE_OR_SUPPORTING_KPI,1,1,1,1,Goalie Model,Use directly or as source for goalie-specific score.
+Goalie,Accurate passes,accurate_passes,CORE_OR_SUPPORTING_KPI,1,1,1,1,Goalie Model,Use directly or as source for goalie-specific score.
+Goalie,"Accurate passes, %",accurate_passes_pct,STORE_QA_CALCULATE_ADJUSTED,1,1,1,0,Goalie Model,"Store raw percentage, but website should calculate reliability-protected version from attempts/successes."
+Goalie,xG conceded,xg_conceded,CORE_OR_SUPPORTING_KPI,1,1,1,1,Goalie Model,Use directly or as source for goalie-specific score.
+Goalie,xG per shot taken,xg_per_shot_taken,CORE_OR_SUPPORTING_KPI,1,1,1,1,Goalie Model,Use directly or as source for goalie-specific score.
+Goalie,xG per goal conceded,xg_per_goal_conceded,CORE_OR_SUPPORTING_KPI,1,1,1,1,Goalie Model,Use directly or as source for goalie-specific score.
+Goalie,xG per shot saved,xg_per_shot_saved,CORE_OR_SUPPORTING_KPI,1,1,1,1,Goalie Model,Use directly or as source for goalie-specific score.
+Goalie,Shootout saves,shootout_saves,OPTIONAL_MODULE,1,1,1,0,Goalie Model,Shootout context only; too small-sample for core goalie score.
+Goalie,Shootouts allowed,shootouts_allowed,OPTIONAL_MODULE,1,1,1,0,Goalie Model,Shootout context only; too small-sample for core goalie score.
+Goalie,Shootouts,shootouts,OPTIONAL_MODULE,1,1,1,0,Goalie Model,Shootout context only; too small-sample for core goalie score.
+Goalie,Scoring chances - total,scoring_chances_minus_total,CORE_OR_SUPPORTING_KPI,1,1,1,1,Goalie Model,Use directly or as source for goalie-specific score.
+Goalie,Scoring chance saves,scoring_chance_saves,CORE_OR_SUPPORTING_KPI,1,1,1,1,Goalie Model,Use directly or as source for goalie-specific score.
+Goalie,"Scoring chance saves, %",scoring_chance_saves_pct,STORE_QA_CALCULATE_ADJUSTED,1,1,1,0,Goalie Model,"Store raw percentage, but website should calculate reliability-protected version from attempts/successes."

@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.06), transparent 22%),
+    radial-gradient(circle at top right, rgba(231, 184, 13, 0.14), transparent 20%),
+    linear-gradient(180deg, #03060b 0%, #09111d 45%, #0b1220 100%);
+  color: white;
+}
+
+body::selection {
+  background: rgba(247, 207, 47, 0.28);
+}
+
+@layer base {
+  * {
+    @apply border-line;
+  }
+
+  body {
+    @apply font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply tracking-tight text-white;
+  }
+
+  select option {
+    background-color: #8a6508;
+    color: #fffdf5;
+  }
+
+  select option:checked {
+    background-color: #d4a81e;
+    color: #07111d;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-3xl border border-white/10 bg-white/5 shadow-soft backdrop-blur-xl;
+  }
+
+  .gold-ring {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 0 0 1px rgba(247, 207, 47, 0.08),
+      0 20px 40px rgba(0, 0, 0, 0.24);
+  }
+
+  .metric-gradient {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+      linear-gradient(135deg, rgba(247, 207, 47, 0.1), transparent 55%);
+  }
+
+  .section-title {
+    @apply text-sm font-semibold uppercase tracking-[0.22em] text-gold-200/80;
+  }
+
+  .select-gold {
+    @apply w-full rounded-2xl border border-gold-300/35 bg-gold-300/15 px-4 py-3 text-sm text-white outline-none transition;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 8px 20px rgba(247, 207, 47, 0.08);
+  }
+
+  .select-gold:focus {
+    @apply border-gold-200/70 bg-gold-300/20;
+  }
+}

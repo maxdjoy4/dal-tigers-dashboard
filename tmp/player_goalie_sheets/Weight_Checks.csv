@@ -1,0 +1,8 @@
+WEIGHT CHECKS,,
+,,
+Check,Formula / Expected,Result
+Defense category weights sum,Expected 100,100
+Forward category weights sum,Expected 100,100
+Goalie category weights sum,Expected 100,100
+Metric final weights,Final weight = category_weight_pct * metric_weight_in_category_pct / 100,See Skater_Metric_Weights and Goalie_Metric_Weights
+Dynamic reweighting,"If include metric is null/unavailable, reweight available metrics within category",Required in app code

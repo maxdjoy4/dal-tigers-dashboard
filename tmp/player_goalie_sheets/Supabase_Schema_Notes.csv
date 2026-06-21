@@ -1,0 +1,15 @@
+SUPABASE SCHEMA NOTES,,
+,,
+Table,Recommended Columns,Purpose / Notes
+players,player_id uuid PK; instat_player_name text; jersey_number int; position text; shoots text optional; active boolean,Roster identity. Do not put stats here.
+goalies,goalie_id uuid PK; instat_player_name text; jersey_number int; active boolean,"Can also use players table with position='G', but separate table is simpler for goalie model."
+player_game_stats,id uuid PK; game_id FK; player_id FK; uploaded_file_id FK; raw jsonb; toi_seconds int; games_played int optional; position text; all extracted stat columns numeric nullable,"Use for game-by-game if available. If only season aggregate, create player_season_stats too."
+player_season_stats,id uuid PK; season text; player_id FK; uploaded_file_id FK; raw jsonb; toi_seconds int; all extracted stat columns numeric nullable,Use current season aggregate exports.
+goalie_season_stats,id uuid PK; season text; goalie_id FK; uploaded_file_id FK; raw jsonb; toi_seconds int; all goalie extracted stat columns numeric nullable,Goalie aggregate import.
+player_metric_weights,metric_weight_id uuid PK; model_type text; category text; category_weight_pct numeric; metric_key text; source_columns text[]; direction text; normalization text; score_method text; metric_weight_in_category_pct numeric; final_weight_pct numeric; include_in_score boolean; sample_rule text,This workbook feeds this table.
+goalie_metric_weights,same shape as player_metric_weights but model_type='Goalie',Separate table or shared metric_weights table with model_type.
+player_calculated_metrics,id uuid PK; player_id FK; season/game_id; metric_key text; raw_value numeric; calculated_value numeric; score_0_100 numeric; reliability_flag text,"Store derived per-60, adjusted %, percentiles."
+player_scores,id uuid PK; player_id FK; season/game_id; model_type text; overall_score numeric; category_scores jsonb; reliability_score numeric; context_flags jsonb; calculated_at timestamptz,Dashboard reads this.
+goalie_scores,id uuid PK; goalie_id FK; season/game_id; overall_score numeric; category_scores jsonb; reliability_score numeric; context_flags jsonb; calculated_at timestamptz,Goalie dashboard reads this.
+team_to_player_metric_mapping,rank int; team_stat text; team_codex_key text; player_metric_keys text[]; goalie_metric_keys text[]; mapping_type text; note text,Keeps player model tied to AUS success model.
+uploaded_files,"existing table; add file_type text if needed: team_stats, skater_stats, goalie_stats, metric_weights",Link every import to file source.

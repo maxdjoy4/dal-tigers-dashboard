@@ -1,0 +1,54 @@
+[
+  {
+    "CODEX BUILD TASKS": "Step",
+    "": "Definition of Done"
+  },
+  {
+    "CODEX BUILD TASKS": "1",
+    "": "Add player/goalie season stat tables, metric weight tables, calculated metrics, scores, and mapping tables."
+  },
+  {
+    "CODEX BUILD TASKS": "2",
+    "": "Handle skater export, goalie export, and team weight model. Preserve raw jsonb and normalize numeric columns."
+  },
+  {
+    "CODEX BUILD TASKS": "3",
+    "": "Import this workbook’s Skater_Metric_Weights and Goalie_Metric_Weights into Supabase."
+  },
+  {
+    "CODEX BUILD TASKS": "4",
+    "": "Calculate per-60, adjusted percentages, inverted metrics, percentiles by position group, category scores, and overall scores."
+  },
+  {
+    "CODEX BUILD TASKS": "5",
+    "": "Use games played, TOI, shot/chance attempts, and metric-specific denominators."
+  },
+  {
+    "CODEX BUILD TASKS": "6",
+    "": "If a metric is null or inactive, redistribute weight within the active category."
+  },
+  {
+    "CODEX BUILD TASKS": "7",
+    "": "Roster table, top skaters, top goalies, category leaders, risk flags, and sample-size flags."
+  },
+  {
+    "CODEX BUILD TASKS": "8",
+    "": "Cards for overall/category scores, strongest KPIs, development areas, comparison to team/position average, raw stat table."
+  },
+  {
+    "CODEX BUILD TASKS": "9",
+    "": "Goalie overall score, save %, GSAE, chance save profile, workload, puck-playing, reliability."
+  },
+  {
+    "CODEX BUILD TASKS": "10",
+    "": "Compare players or goalies across raw, calculated, and weighted metrics."
+  },
+  {
+    "CODEX BUILD TASKS": "11",
+    "": "Every score should have a tooltip showing source columns, direction, normalization, and weight."
+  },
+  {
+    "CODEX BUILD TASKS": "12",
+    "": "Upload the current Dal skater + goalie exports and confirm scores produce without errors, nulls are handled, and active weights sum correctly."
+  }
+]

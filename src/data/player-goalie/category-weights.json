@@ -1,0 +1,134 @@
+[
+  {
+    "Model Type": "Forward",
+    "Category": "Offensive Creation & Shot Quality",
+    "Category Weight %": "27",
+    "Description": "Primary forward value: creating quality shots, chances, xG, and dangerous passes."
+  },
+  {
+    "Model Type": "Forward",
+    "Category": "Possession & On-Ice Impact",
+    "Category Weight %": "18",
+    "Description": "Connects the individual to the AUS team-success model through Corsi, Fenwick, and xG differential."
+  },
+  {
+    "Model Type": "Forward",
+    "Category": "Transition Offense",
+    "Category Weight %": "12",
+    "Description": "Rewards entries, attack creation off the rush, and possession gains into the offensive zone."
+  },
+  {
+    "Model Type": "Forward",
+    "Category": "Puck Management",
+    "Category Weight %": "14",
+    "Description": "Controls turnovers, pass quality, and risk in NZ/DZ/OZ situations."
+  },
+  {
+    "Model Type": "Forward",
+    "Category": "Defensive Impact",
+    "Category Weight %": "10",
+    "Description": "Captures suppression, takeaways, blocking, and defensive involvement without over-rewarding players stuck defending."
+  },
+  {
+    "Model Type": "Forward",
+    "Category": "Battle / Compete & Recoveries",
+    "Category Weight %": "10",
+    "Description": "Rewards winning pucks and extending possession, while using attempts + wins to avoid small-sample percentage traps."
+  },
+  {
+    "Model Type": "Forward",
+    "Category": "Special Teams",
+    "Category Weight %": "5",
+    "Description": "Used when PP/PK data is populated; dynamically redistributed when missing."
+  },
+  {
+    "Model Type": "Forward",
+    "Category": "Discipline / Risk",
+    "Category Weight %": "4",
+    "Description": "Penalties, errors, and high-risk losses should reduce score."
+  },
+  {
+    "Model Type": "Defense",
+    "Category": "Defensive Impact & Suppression",
+    "Category Weight %": "24",
+    "Description": "Most important defense value: suppress xG, block dangerous shots, retrieve pucks, and reduce quality against."
+  },
+  {
+    "Model Type": "Defense",
+    "Category": "Puck Management & Exits",
+    "Category Weight %": "22",
+    "Description": "Core defense skill: manage DZ/NZ pucks, make first passes, and exit cleanly."
+  },
+  {
+    "Model Type": "Defense",
+    "Category": "Possession & On-Ice Impact",
+    "Category Weight %": "17",
+    "Description": "Corsi, Fenwick, net xG, and territory indicate whether play moves the right way with player on ice."
+  },
+  {
+    "Model Type": "Defense",
+    "Category": "Transition Support",
+    "Category Weight %": "12",
+    "Description": "Rewards breakout support, passing entries, and controlled transition assistance."
+  },
+  {
+    "Model Type": "Defense",
+    "Category": "Battle / Recoveries",
+    "Category Weight %": "10",
+    "Description": "Defenders must win/recover pucks under pressure, especially in DZ."
+  },
+  {
+    "Model Type": "Defense",
+    "Category": "Offensive Support",
+    "Category Weight %": "8",
+    "Description": "Rewards secondary offensive contribution without scoring defense like forwards."
+  },
+  {
+    "Model Type": "Defense",
+    "Category": "Special Teams",
+    "Category Weight %": "4",
+    "Description": "PK/PP details if available; dynamic redistribution when missing."
+  },
+  {
+    "Model Type": "Defense",
+    "Category": "Discipline / Risk",
+    "Category Weight %": "3",
+    "Description": "Defensive errors and penalties can be high-cost."
+  },
+  {
+    "Model Type": "Goalie",
+    "Category": "Shot-Stopping",
+    "Category Weight %": "30",
+    "Description": "Core goalie output: stop pucks relative to shots faced and goals allowed."
+  },
+  {
+    "Model Type": "Goalie",
+    "Category": "xG-Adjusted Performance",
+    "Category Weight %": "25",
+    "Description": "Best chance-quality adjustment: did goalie outperform or underperform expected goals against?"
+  },
+  {
+    "Model Type": "Goalie",
+    "Category": "High-Danger / Scoring-Chance Performance",
+    "Category Weight %": "20",
+    "Description": "Important because team success depends on surviving dangerous chances."
+  },
+  {
+    "Model Type": "Goalie",
+    "Category": "Workload / Usage Context",
+    "Category Weight %": "10",
+    "Description": "Prevents the model from overvaluing tiny samples or easy workloads."
+  },
+  {
+    "Model Type": "Goalie",
+    "Category": "Puck-Playing",
+    "Category Weight %": "10",
+    "Description": "Supports exits and reduces pressure through passing decisions."
+  },
+  {
+    "Model Type": "Goalie",
+    "Category": "Discipline / Special Situations",
+    "Category Weight %": "5",
+    "Description": "Low-weight context for penalties and shootouts."
+  }
+]

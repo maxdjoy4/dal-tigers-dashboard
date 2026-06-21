@@ -1,0 +1,15 @@
+VALIDATION CHECKS,
+,
+Validation Check,Rule
+Header validation,"Import should fail loudly if required columns missing: Player, Position, Time on ice, Games played."
+Dash handling,Convert '-' and blank strings to null. Do not convert dash to zero unless the raw metric truly means zero.
+Percent parsing,Convert '40%' to 0.40 internally. Keep original raw value in raw jsonb for audit.
+TOI parsing,Convert Time on ice to seconds/minutes. Validate that season aggregate TOI values are plausible.
+Position validation,"Skater model uses Position F/D. Goalies use goalie file, not skater model."
+Per-60 validation,Do not calculate per-60 if TOI is null or zero.
+Adjusted % validation,"Require attempts denominator. If denominator missing, use provided % only as display/QA, not score."
+Small sample flag,Full reliability 15+ games or meaningful TOI. Moderate 8-14. Low 4-7. Very low fewer than 4.
+Dynamic weight validation,"Within each model/category, active metric weights should renormalize to 100 among available metrics."
+Score bounds,"Every metric score, category score, and overall score must be clamped between 0 and 100."
+No hidden personal data,"Do not use height, weight, nationality, date of birth, or contract fields in performance scoring."
+Auditability,"Dashboard should show what drove each score, not just final ranking."

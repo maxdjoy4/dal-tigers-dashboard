@@ -1,0 +1,62 @@
+[
+  {
+    "SCORING RULES FOR CODEX": "Rule",
+    "": "Notes"
+  },
+  {
+    "SCORING RULES FOR CODEX": "TOI conversion",
+    "": "Required before per-60 calculations."
+  },
+  {
+    "SCORING RULES FOR CODEX": "Per-60 volume",
+    "": "Do not calculate if TOI is null or 0."
+  },
+  {
+    "SCORING RULES FOR CODEX": "Positive metric scoring",
+    "": "Use F vs F, D vs D, G vs G."
+  },
+  {
+    "SCORING RULES FOR CODEX": "Negative metric scoring",
+    "": "Examples: DZ losses, NZ losses, penalty time, goals against."
+  },
+  {
+    "SCORING RULES FOR CODEX": "Adjusted percentage",
+    "": "Use for puck battles, pass accuracy, faceoffs, goalie saves."
+  },
+  {
+    "SCORING RULES FOR CODEX": "Puck battle adjusted %",
+    "": "Score adjusted % and won battles /60 together."
+  },
+  {
+    "SCORING RULES FOR CODEX": "Pass accuracy adjusted %",
+    "": "Use raw accurate passes and passes."
+  },
+  {
+    "SCORING RULES FOR CODEX": "Corsi/Fenwick adjusted %",
+    "": "Fallback to provided % if raw parts missing."
+  },
+  {
+    "SCORING RULES FOR CODEX": "Goalie save % adjusted",
+    "": "Use 0.900 baseline if no league average; sample_weight 100 shots."
+  },
+  {
+    "SCORING RULES FOR CODEX": "Goalie scoring chance save % adjusted",
+    "": "Use baseline from team/league if available; sample_weight 25 chances."
+  },
+  {
+    "SCORING RULES FOR CODEX": "Outcome stat handling",
+    "": "Do not let outcomes dominate process model."
+  },
+  {
+    "SCORING RULES FOR CODEX": "Context-dependent defensive volume",
+    "": "Do not score raw DZ volume as purely positive."
+  },
+  {
+    "SCORING RULES FOR CODEX": "Missing data",
+    "": "Redistribute weights across active metrics in same category."
+  },
+  {
+    "SCORING RULES FOR CODEX": "Dynamic reweighting",
+    "": "Do not punish a player for untracked PP/PK columns."
+  }
+]
