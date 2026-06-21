@@ -9,6 +9,7 @@ import {
 import { hasSupabaseEnv } from "@/lib/env";
 
 const recommendationArray = z.array(z.string());
+const priorityLevelSchema = z.enum(["Critical", "High", "Medium", "Monitor"]);
 
 const evidenceBundleSchema = z.object({
   season: z.string(),
@@ -53,7 +54,7 @@ const evidenceBundleSchema = z.object({
 const teamRecommendationSchema = z.object({
   rank: z.number().int(),
   title: z.string(),
-  priorityLevel: z.string(),
+  priorityLevel: priorityLevelSchema,
   coachingDiagnosis: z.string(),
   whyItMatters: z.string(),
   compareNote: z.string().nullable(),
@@ -73,6 +74,7 @@ const teamRecommendationSchema = z.object({
 const microRecommendationSchema = z.object({
   rank: z.number().int(),
   title: z.string(),
+  priorityLevel: priorityLevelSchema.optional(),
   individualTacticDiagnosis: z.string(),
   whyItMatters: z.string(),
   compareNote: z.string().nullable(),
@@ -87,7 +89,10 @@ const microRecommendationSchema = z.object({
     "Low confidence",
     "Data limited",
   ]),
-});
+}).transform((value) => ({
+  ...value,
+  priorityLevel: value.priorityLevel ?? "Medium",
+}));
 
 const payloadSchema = z.object({
   season: z.string(),
